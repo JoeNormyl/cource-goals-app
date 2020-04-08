@@ -37,6 +37,22 @@ export default function App() {
 		setIsAddMode(false);
 	};
 
+	const randomColorStyles = () => {
+		const myColor = randomRgb();
+		return {
+			width: "100%",
+			padding: 5,
+			marginVertical: 10,
+			flexDirection: "row",
+			justifyContent: "space-between",
+			alignItems: "center",
+			backgroundColor: myColor,
+			borderColor: "black",
+			borderWidth: 1,
+			borderRadius: 15,
+		};
+	};
+
 	return (
 		<View style={styles.screen}>
 			<View>
@@ -54,16 +70,26 @@ export default function App() {
 				style={styles.listStyles}
 				data={courseGoals}
 				renderItem={(itemData) => (
-					<GoalItem
-						id={itemData.item.id}
-						onDelete={removeGoalHandler}
-						title={itemData.item.value}
-					/>
+					<View style={randomColorStyles()}>
+						<GoalItem
+							id={itemData.item.id}
+							onDelete={removeGoalHandler}
+							title={itemData.item.value}
+						/>
+					</View>
 				)}
 			/>
 		</View>
 	);
 }
+
+const randomRgb = () => {
+	const red = Math.floor(Math.random() * 256);
+	const green = Math.floor(Math.random() * 256);
+	const blue = Math.floor(Math.random() * 256);
+
+	return `rgb(${red}, ${green}, ${blue})`;
+};
 
 const styles = StyleSheet.create({
 	screen: {

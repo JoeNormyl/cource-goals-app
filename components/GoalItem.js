@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "center",
-		backgroundColor: "khaki",
-		borderColor: "saddlebrown",
+		backgroundColor: "darkslategrey",
+		borderColor: "black",
 		borderWidth: 1,
 		borderRadius: 15,
 	},
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
 		alignItems: "flex-start",
 	},
 	textStyles: {
-		color: "saddlebrown",
+		color: "white",
 		fontSize: 16,
 	},
 	deleteButton: {
